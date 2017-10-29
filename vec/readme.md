@@ -1,3 +1,5 @@
+#这里是有关vec和petsc的一些基础功能的使用
+
 ### ex2.c ：  
 <ol>
     <li>petsc并行程序的创建</li>
@@ -9,6 +11,7 @@
 
 ### ex3.c :
 <ol>
+    <li>画图同能，由于没有OpenGL环境，略</li>
     <li>只对本处理器上的向量进行赋值</li>
     <li>向量上的值的获取</li>
 </ol>
@@ -52,5 +55,41 @@
     <li>向量与向量相加</li>
     <li>向量乘标量、向量点乘向量、向量与向量对应元素相乘</li>
 </ol>
+
+### ex11.c : 
+    向量的范数，才疏学浅，并不知道是啥，也没查到，不管了
+
+### ex12.c : 
+<ol>
+    <li>将向量分块，这里把它叫做分块向量（英文是multi-component vector，虽然这样不是很准确）
+        <ul>和它关联的有（但ex11.c中没有提及）：
+            <li>VecSetValuesBlocked(Vec x,PetscInt ni,const PetscInt ix[],const PetscScalar y[],InsertMode iora)
+            将一个已经分块的矩阵的某些块赋值为指定值
+            参数1：要赋值的矩阵
+            参数2：有几块要赋值
+            参数3：哪几块要赋值
+            参数4：要放入的值（按块在参数3中出现的顺序）
+            参数5：赋值模式（代替或叠加）
+            需要搭配VecAssemblyBegin(), VecAssemblyEnd()使用</li>
+            <li>VecGetBlockSize(Vec v,PetscInt *bs)
+            获取本矩阵块大小</li>
+        </ul>
+    <li>上面提到了怎么将整块赋值，也可以用非分块向量给分块向量中的每一块的第几个元素赋值</li>
+</ol>
+
+### ex15.c : 
+    和Mathematical这个软件进行玩耍一下，略
+
+
+### ex16.c :
+<ol>
+    <li>续ex12.c，当然也有将所有块内的第几个元素赋值为另一个向量里所有块第几个元素的值</li>
+</ol>
+
+### ex18.c :
+<ol>
+    <li>一个数值积分的例子</li>
+</ol>
+    
 
 <meta http-equiv="refresh" content="0.2">
