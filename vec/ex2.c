@@ -53,7 +53,7 @@ int main(int argc,char **argv)
     //要做的事情在Begin和End中间，并且这两条语句是强制要求有的
 
     ierr = VecView(x,PETSC_VIEWER_STDOUT_WORLD);CHKERRQ(ierr);
-    //查看矩阵，不知道什么原理
+    //查看向量
     ierr = VecDestroy(&x);CHKERRQ(ierr);
     //释放不用的矩阵的内存
     ierr = PetscFinalize();

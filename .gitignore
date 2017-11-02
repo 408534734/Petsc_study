@@ -2,6 +2,9 @@
 *
 !*.*
 !*/
+*.dat
+*.info
+!makefile
 
 # Prerequisites
 *.d
