@@ -1,0 +1,4 @@
+cmd :
+    cd {FILE_ACTIVE_PATH} &&
+    make {FILE_ACTIVE_NAME_BASE}.exe &&
+    mpirun -n 8 ./{FILE_ACTIVE_NAME_BASE}.exe
